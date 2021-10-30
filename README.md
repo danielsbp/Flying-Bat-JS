@@ -1,3 +1,5 @@
+<img src="./bat.gif" width = 100 height=100/>
+
 # Flying Bat JS
 
 ## Descrição
