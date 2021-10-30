@@ -19,9 +19,31 @@ class Player extends ComponentOfTheGame {
         this.frame = 0;
         this.gifImage = 0;
 
-        
+        this.speed = 7;
+
+        this.status = "none";
+
+        document.addEventListener("keydown", (playerKey) => {
+            console.log(playerKey.key + " está sendo apertado");
+            if(playerKey.key == "w") {
+                this.status = "up";
+            }
+            else if(playerKey.key == "s") {
+                this.status = "down";
+            }
+                
+        });
+        document.addEventListener("keyup", (playerKey) => {
+            this.status = "none";
+        });
     }
-} 
+}
+    
+    
+
+        
+
+
 
 // Classe do chão
 class Floor extends ComponentOfTheGame {
@@ -88,9 +110,22 @@ let game = {
         game.player.frame++;
         // console.log(game.player.frame);
         
+        // Controle do jogador
+        if(game.player.status == "up" && game.player.y>-30){
+            game.player.y += -game.player.speed;
+        }
+
+        if(game.player.status == "down" && game.player.y<270) {
+            game.player.y += game.player.speed;
+        }
+
+        if(game.player.status == "none") {
+            game.player.y;
+        }
+
 
         // O número 6 controla a velocidade que os frames são trocados.
-        if(game.player.frame % 6 == 0){
+        if(game.player.frame % 5 == 0){
             game.player.gifImage++;
             // Troca os frames do gif. Faz com que o morcego fique "voando" na tela.
             // Este método pode causar piscadas.
