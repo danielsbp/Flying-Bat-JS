@@ -16,3 +16,5 @@ O Flying Bat JS é um jogo 2D de obstáculos onde você controla um morcego pela
 - [ ] Tela inicial
 - [ ] Game over
 
+## Jogo rodando:
+<img src="./jogo-rodando.gif">
