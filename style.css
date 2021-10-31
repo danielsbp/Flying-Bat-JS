@@ -1,5 +1,9 @@
 canvas {
     background-color: #000e33;
-    margin: 0 auto;
-    display: block;
+    cursor: pointer;
+}
+
+button, canvas {
+	display: block;
+	margin: 0 auto;
 }
